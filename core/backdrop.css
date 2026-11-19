@@ -1,0 +1,17 @@
+/* CUT & PASTE — the cork board: warm, flecked, with a few stray pins. */
+html { background: var(--cp-board) !important; }
+body { background: transparent !important; }
+html::before, html::after { content: ""; position: fixed; pointer-events: none; z-index: -1; inset: 0; }
+html::before {
+    background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .25  0 0 0 0 .16  0 0 0 0 .08  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+        radial-gradient(120% 90% at 50% 40%, transparent 50%, rgba(0,0,0,.35) 100%),
+        var(--cp-board);
+}
+html::after {
+    background:
+        radial-gradient(circle at 6% 92%, var(--cp-red) 0 6px, rgba(0,0,0,.35) 7px 8px, transparent 9px),
+        radial-gradient(circle at 97% 6%, var(--cp-blue) 0 6px, rgba(0,0,0,.35) 7px 8px, transparent 9px);
+    opacity: var(--cp-pins, 1);
+}
+.Wrapper.ForceOpaqueBackground, .FocusNavigationRoot, .Root, .OuterFrame, .ContentFrame { background: transparent !important; }

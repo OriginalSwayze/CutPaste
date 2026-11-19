@@ -1,0 +1,316 @@
+{
+    "name": "Cut & Paste",
+    "author": "OriginalSwayze",
+    "description": "A zine collage pinned to a cork board: a tilted paper sheet with tape, the game list on a spiral notebook page, colored index tabs, sticky-note dock, a ransom-note wordmark, highlighter selections, halftone covers and a cut-out PLAY! label.",
+    "version": "1.0.0",
+    "tags": [
+        "Paper",
+        "Collage",
+        "Light",
+        "Playful",
+        "Animated"
+    ],
+    "header_image": "https://raw.githubusercontent.com/OriginalSwayze/CutPaste/main/media/library.gif",
+    "splash_image": "https://raw.githubusercontent.com/OriginalSwayze/CutPaste/main/media/gamepage.png",
+    "github": {
+        "owner": "OriginalSwayze",
+        "repo_name": "CutPaste"
+    },
+    "Steam-WebKit": "webkit.css",
+    "Conditions": {
+        "Paper": {
+            "description": "Cork, Newsprint, Risograph or Kraft.",
+            "tab": "Look",
+            "default": "Cork",
+            "values": {
+                "Cork": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/presets/cork.css"
+                    }
+                },
+                "Newsprint": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/presets/newsprint.css"
+                    }
+                },
+                "Risograph": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/presets/risograph.css"
+                    }
+                },
+                "Kraft": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/presets/kraft.css"
+                    }
+                }
+            }
+        },
+        "Tilt": {
+            "description": "Leave the sheets a little crooked, or straighten them.",
+            "tab": "Look",
+            "default": "Crooked",
+            "values": {
+                "Crooked": {},
+                "Straight": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/straight.css"
+                    }
+                }
+            }
+        },
+        "Halftone covers": {
+            "description": "Print dots over covers (clear on hover).",
+            "tab": "Look",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/halftone-off.css"
+                    }
+                }
+            }
+        },
+        "Pins": {
+            "description": "The stray pins on the board.",
+            "tab": "Look",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/pins-off.css"
+                    }
+                }
+            }
+        },
+        "Game list density": {
+            "description": "Row size in the game list.",
+            "tab": "Layout",
+            "default": "Comfortable",
+            "values": {
+                "Comfortable": {},
+                "Compact": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/list-compact.css"
+                    }
+                }
+            }
+        },
+        "What's New shelf": {
+            "description": "The What's New carousel on the library home.",
+            "tab": "Layout",
+            "default": "Show",
+            "values": {
+                "Show": {},
+                "Hide": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/hide-whats-new.css"
+                    }
+                }
+            }
+        },
+        "Readout": {
+            "description": "The \"issue no.\" date scrap beside the menus.",
+            "tab": "Layout",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/hud-off.css"
+                    }
+                }
+            }
+        },
+        "Startup screen": {
+            "description": "Cut-out letters fly in and stick when Steam opens.",
+            "tab": "Motion",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/boot-off.css"
+                    }
+                }
+            }
+        },
+        "Motion": {
+            "description": "Full: everything. Calm: hovers only, the backdrop stands still. Still: no theme motion.",
+            "tab": "Motion",
+            "default": "Full",
+            "values": {
+                "Full": {},
+                "Calm": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/motion-calm.css"
+                    }
+                },
+                "Still": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/motion-still.css"
+                    }
+                }
+            }
+        },
+        "Cover hover": {
+            "description": "Library covers under the cursor: Tilt, Lift or Off.",
+            "tab": "Motion",
+            "default": "Tilt",
+            "values": {
+                "Tilt": {},
+                "Lift": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/covers-lift.css"
+                    }
+                },
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/covers-off.css"
+                    }
+                }
+            }
+        },
+        "Privacy": {
+            "description": "Blur your account name and wallet until hovered.",
+            "tab": "Extras",
+            "default": "Off",
+            "values": {
+                "Off": {},
+                "Blur": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/privacy.css"
+                    }
+                }
+            }
+        },
+        "Contrast": {
+            "description": "High: solid panels and brighter secondary text.",
+            "tab": "Accessibility",
+            "default": "Normal",
+            "values": {
+                "Normal": {},
+                "High": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/contrast-high.css"
+                    }
+                }
+            }
+        },
+        "Focus rings": {
+            "description": "Strong: a thick, high-visibility outline on whatever has keyboard or controller focus.",
+            "tab": "Accessibility",
+            "default": "Standard",
+            "values": {
+                "Standard": {},
+                "Strong": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/focus-strong.css"
+                    }
+                }
+            }
+        },
+        "Text size": {
+            "description": "Large: bigger game list and body text.",
+            "tab": "Accessibility",
+            "default": "Normal",
+            "values": {
+                "Normal": {},
+                "Large": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/text-large.css"
+                    }
+                }
+            }
+        }
+    },
+    "Patches": [
+        {
+            "MatchRegexString": "^Steam$",
+            "TargetCss": "main.css",
+            "TargetJs": "js/main.js"
+        },
+        {
+            "MatchRegexString": ".ModalDialogPopup",
+            "TargetCss": "main.css"
+        },
+        {
+            "MatchRegexString": ".FullModalOverlay",
+            "TargetCss": "main.css"
+        },
+        {
+            "MatchRegexString": ".friendsui-container",
+            "TargetCss": "friends.css"
+        },
+        {
+            "MatchRegexString": ".ContextMenuPopup",
+            "TargetCss": "popup.css"
+        },
+        {
+            "MatchRegexString": ".DesktopToastContainer",
+            "TargetCss": "toast.css"
+        },
+        {
+            "MatchRegexString": "^Sign in to Steam$",
+            "TargetCss": "login.css"
+        }
+    ]
+}

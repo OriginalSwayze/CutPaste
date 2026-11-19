@@ -1,0 +1,2 @@
+/* Straighten up: no tilted sheets */
+html .Library > .Container > .LeftListSizableContainer, html .MainPanel { transform: none !important; --cp-rot: 0deg; }

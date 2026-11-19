@@ -1,0 +1,22 @@
+/* Cut & Paste — context menus and dropdown menus (each is its own window). */
+@import url("./core/alias.css");
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+html, body { background: transparent !important; }
+html body .contextMenu.ContextMenuPosition,
+html body .contextMenu { background: transparent !important; border: none !important; box-shadow: none !important; }
+/* CUT & PASTE menus: a torn scrap of paper; options get underlined */
+html .contextMenu .contextMenuContents, html .contextMenu .NotificationsMenu {
+    border-radius: 0 !important; border: none !important; background: #FFFEF8 !important; padding: 12px 8px !important;
+    clip-path: var(--cp-torn-b); animation: mr-pop 300ms cubic-bezier(.2,.9,.3,1.2) backwards;
+}
+html .contextMenu .contextMenuContents .contextMenuItem {
+    border-radius: 0 !important; padding: 5px 12px !important; background: transparent !important; color: #1E1B18 !important;
+    font-family: var(--cp-type) !important; font-size: 13px !important; font-weight: 700 !important; text-transform: none !important; letter-spacing: 0 !important;
+}
+html .contextMenu .contextMenuContents .contextMenuItem:not(.disabled):is(:hover,:focus,.active) { background: var(--mr-grad-soft) !important; }
+html .contextMenu .contextMenuContents .contextMenuItem.disabled { opacity: .4; }
+html .contextMenu .contextMenuContents hr.Separator, html .contextMenu hr { border: none !important; height: 2px !important; margin: 6px 4px !important; background: repeating-linear-gradient(90deg, #1E1B18 0 6px, transparent 6px 10px) !important; opacity: .35; }
+html .contextMenu .contextMenuContents .contextMenuItem.ContextMenuAction:is(.Play,.Launch) { background: var(--cp-red) !important; color: #fff !important; font-family: var(--cp-cut) !important; font-weight: 400 !important; font-size: 16px !important; transform: rotate(-1deg); }
+html .contextMenu .contextMenuContents .contextMenuItem.ContextMenuAction svg :is(path,polygon,rect,circle) { fill: currentColor !important; }
+html .contextMenu :is(span, div) { color: inherit; }

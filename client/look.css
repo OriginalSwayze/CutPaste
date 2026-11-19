@@ -1,0 +1,145 @@
+/* CUT & PASTE — the look. Paper and ink; mismatched cut-out type; tape; highlighter. */
+
+/* ===== Ink on paper: everything inside a sheet uses ink, not light text ===== */
+html :is(.MainPanel, .Library > .Container > .LeftListSizableContainer) :is(span, div, a, h1, h2, h3, p, label) { color: var(--cp-ink) !important; }
+html :is(.MainPanel, .Library > .Container > .LeftListSizableContainer) svg:not(.SVGIcon_Play) path { fill: var(--cp-ink-2); }
+
+
+/* Cut-out headings keep their own paper-on-ink colors inside the sheet */
+html .MainPanel :is(.UpdatesContainer .Name, .ShowcaseHeader .Focusable, .ShowcaseHeader .DialogDropDown_CurrentDisplay),
+html .MainPanel :is(.UpdatesContainer .Name, .ShowcaseHeader .Focusable, .ShowcaseHeader .DialogDropDown_CurrentDisplay) * { color: var(--cp-paper) !important; }
+html .MainPanel :is(.PartnerEventFeaturedHeader, .PartnerEventFeaturedHeader *) { color: var(--cp-paper) !important; }
+html .MainPanel .PlayButton.ButtonChild, html .MainPanel .PlayButton.ButtonChild * { color: #fff !important; }
+html .MainPanel .RecentGame :is([class*='Played'], [class*='Played'] *), html .MainPanel .LibraryItemBox :is(span, div) { color: #fff !important; }
+html .MainPanel .Event_Title, html .MainPanel .HoversEnabled + * { color: var(--cp-ink) !important; }
+
+/* ===== Type ============================================================ */
+html :is(.UpdatesContainer .Name, .ShowcaseHeader .Focusable, .ShowcaseHeader .DialogDropDown_CurrentDisplay) {
+    font-family: var(--cp-cut) !important; font-size: 26px !important; font-weight: 400 !important; letter-spacing: .01em !important; text-transform: uppercase !important;
+    background: var(--cp-ink) !important; color: var(--cp-paper) !important; padding: 0 10px !important; display: inline-block; transform: rotate(-1.5deg);
+}
+html :is(.AppDetailsSection .SectionHeader, h2.SectionHeader) {
+    font-family: var(--cp-cut) !important; font-size: 20px !important; font-weight: 400 !important; text-transform: uppercase !important; letter-spacing: .02em !important;
+    background: var(--cp-yellow) !important; color: var(--cp-ink) !important; display: inline-block; padding: 2px 10px !important; transform: rotate(-1deg); width: auto !important;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.2);
+}
+html .AppDetailsSection .SectionHeader::before { display: none !important; }
+html :is(.PlayBar .PlayBarLabel, .UpdatesContainer .EventTime, .LeftListSizableContainer .SearchBar .MenuHeader .ViewName) {
+    font-family: var(--cp-hand) !important; font-size: 14px !important; font-weight: 700 !important; text-transform: none !important; letter-spacing: 0 !important; color: var(--cp-red) !important;
+}
+html .PlayBar :is(.LastPlayedInfo, .PlayBarDetailLabel) { font-family: var(--cp-type) !important; font-weight: 700 !important; color: var(--cp-ink) !important; }
+
+/* ===== The ransom-note wordmark (letters built by the script) ========= */
+html .RootMenuBar .RootMenuButton .SteamButton::before, html .RootMenuBar .RootMenuButton .SteamButton::after { display: none !important; }
+html .RootMenuBar .RootMenuButton .SteamButton { min-width: 150px; }
+html .cp-mark { display: inline-flex; gap: 1px; align-items: center; }
+html .cp-mark { font-size: 15px !important; } html .cp-mark b { flex: none; min-width: .6em; text-align: center; display: inline-block; padding: 1px 4px; font-weight: 400; line-height: 1.1; box-shadow: 1px 2px 0 rgba(0,0,0,.25); }
+html .RootMenuBar .RootMenuButton { font-family: var(--cp-hand) !important; font-size: 15px !important; color: #FFF8E8 !important; text-shadow: 1px 1px 0 rgba(0,0,0,.4); text-transform: none !important; }
+html .RootMenuBar .RootMenuButton:hover { background: transparent !important; color: var(--cp-yellow) !important; }
+
+/* Readout: a scribbled date on a scrap */
+html .od-hud {
+    margin-left: 18px !important; padding: 3px 12px; background: var(--cp-paper); transform: rotate(-2deg);
+    font: 700 15px var(--cp-hand); color: var(--cp-ink); box-shadow: var(--cp-shadow); clip-path: var(--cp-torn-b); pointer-events: none;
+}
+
+/* ===== Account and buttons: paper scraps ============================== */
+html .TitleBarControls .Button, html .TitleBarControls .AccountMenu {
+    border-radius: 2px !important; background: var(--cp-paper) !important; box-shadow: var(--cp-shadow) !important;
+    -webkit-backdrop-filter: none !important; backdrop-filter: none !important; color: var(--cp-ink) !important;
+}
+html .TitleBarControls .Button svg, html .TitleBarControls .Button svg path { fill: var(--cp-ink) !important; }
+html .TitleBarControls .Button:hover, html .TitleBarControls .AccountMenu:hover { transform: rotate(-3deg) !important; background: var(--cp-yellow) !important; }
+html .TitleBarControls .Button.Active { background: var(--cp-pink) !important; }
+html .TitleBarControls .AccountMenu { font-family: var(--cp-hand) !important; font-size: 15px !important; font-weight: 700 !important; }
+html .TitleBarControls .AccountMenu .WalletBalance { background: transparent !important; color: var(--cp-red) !important; font-family: var(--cp-type) !important; font-weight: 700; }
+html .TitleBar .title-bar-actions .title-area-icon svg :is(path, line, rect) { stroke: #FFF8E8 !important; }
+
+/* ===== Sheets ========================================================== */
+html .Library > .Container > div:not(.MainPanel):first-child,
+html .MainPanel {
+    -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-radius: 2px !important;
+    animation: mr-fade-up 700ms cubic-bezier(.2,.9,.3,1.2) backwards;
+}
+
+/* ===== Notebook page (game list) ===================================== */
+html .HomeBox .Bar .Label { font-family: var(--cp-cut) !important; font-size: 22px !important; font-weight: 400 !important; text-transform: uppercase !important; letter-spacing: .02em !important; }
+html .HomeBox .Bar.Selected { background: var(--mr-grad-soft) !important; box-shadow: none !important; }
+html .SearchInput input.DialogInput, html .SearchInput input.DialogTextInputBase {
+    border-radius: 0 !important; background-color: transparent !important; border: none !important; border-bottom: 2px solid var(--cp-ink) !important;
+    font-family: var(--cp-hand) !important; font-size: 15px !important; color: var(--cp-ink) !important; box-shadow: none !important;
+}
+html .SearchInput input::placeholder { color: var(--cp-ink-3) !important; }
+html .ReactVirtualized__List .SectionName { font-family: var(--cp-hand) !important; font-size: 16px !important; font-weight: 700 !important; text-transform: none !important; letter-spacing: 0 !important; color: var(--cp-blue) !important; }
+html .ReactVirtualized__List .SectionCount { color: var(--cp-ink-3) !important; font-family: var(--cp-hand) !important; }
+html .ReactVirtualized__List .SectionRule { display: none; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer) { border-radius: 0 !important; background: transparent !important; }
+html .ReactVirtualized__List .GameListEntryContainer > span { font-family: var(--cp-type) !important; font-size: 13px !important; font-weight: 700 !important; }
+html .ReactVirtualized__List .Container.Uninstalled .GameListEntryContainer > span { font-weight: 400 !important; color: var(--cp-ink-2) !important; }
+html .ReactVirtualized__List .GameListEntryContainer .GameIcon, html .ReactVirtualized__List .GameListEntryContainer .GameIcon img { border-radius: 0 !important; filter: grayscale(1) contrast(1.4) !important; mix-blend-mode: multiply; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover { background: transparent !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover .GameListEntryContainer > span { text-decoration: underline wavy var(--cp-red); text-underline-offset: 3px; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover .GameListEntryContainer { transform: none !important; }
+/* Selected: a highlighter swipe */
+html body .ReactVirtualized__List .Container.Selected.Selected:has(> .GameListEntryContainer) {
+    background: linear-gradient(100deg, transparent 1%, color-mix(in srgb, var(--cp-yellow) 90%, transparent) 3% 95%, transparent 98%) 0 0 / 100% 100% no-repeat !important;
+    box-shadow: none !important; animation: cp-scribble 320ms ease-out;
+}
+html .ReactVirtualized__List .Container.Selected:has(> .GameListEntryContainer)::before { display: none !important; }
+
+/* ===== Home ============================================================ */
+html .UpdatesContainer { background: transparent !important; }
+html .UpdatesContainer .Panel { --cp-rot: 0deg; }
+html .UpdatesContainer .HoversEnabled { border-radius: 0 !important; box-shadow: 0 0 0 6px #fff, var(--cp-shadow) !important; transform: rotate(-1deg); }
+html .UpdatesContainer .EventRowCarousel .Panel:nth-child(even) .HoversEnabled { transform: rotate(1.2deg); }
+html .UpdatesContainer .HoversEnabled:hover { transform: rotate(0) scale(1.03) !important; }
+html .PageLeft, html .PageRight { border-radius: 50% !important; background: var(--cp-ink) !important; }
+html .PageLeft svg *, html .PageRight svg * { stroke: var(--cp-paper) !important; }
+html .ShowcaseHeader .Rule, html .AddShowcaseRow .Rule { height: 2px !important; background: repeating-linear-gradient(90deg, var(--cp-ink) 0 8px, transparent 8px 12px) !important; opacity: .4; }
+/* Covers: printed on newsprint, with halftone dots; clean on hover */
+html .LibraryItemBox, html .LibraryItemBox > * { border-radius: 0 !important; }
+html .LibraryItemBox { box-shadow: 0 0 0 5px #fff, var(--cp-shadow) !important; transition: transform 300ms cubic-bezier(.3,1.6,.5,1) !important; }
+html .LibraryItemBox::after {
+    background: radial-gradient(circle, rgba(0,0,0,.28) 1px, transparent 1.6px) 0 0 / 5px 5px !important;
+    mix-blend-mode: multiply !important; opacity: 1 !important; transition: opacity .3s;
+}
+html .LibraryItemBox:hover { transform: rotate(-2.5deg) scale(1.05) !important; }
+html .LibraryItemBox:hover::after { opacity: 0 !important; }
+html .LibraryItemBoxShine { display: none !important; }
+
+/* ===== Game page ======================================================= */
+html .AppDetailsMain .TopCapsule { border-radius: 0 !important; clip-path: var(--cp-torn-b); }
+html .AppDetailsMain .TopCapsule img.TitleLogo { filter: drop-shadow(3px 3px 0 #fff) drop-shadow(-3px -3px 0 #fff) drop-shadow(6px 8px 0 rgba(0,0,0,.25)); transform: rotate(-2deg); }
+html .AppDetailsMain .PlayBar > .InnerContainer { border-radius: 0 !important; background: var(--cp-paper-2) !important; box-shadow: var(--cp-shadow) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; clip-path: var(--cp-torn); }
+/* PLAY: a cut-out red label with tape */
+html .PlayButton.ButtonChild {
+    border-radius: 0 !important; background: var(--cp-red) !important; box-shadow: 3px 4px 0 rgba(0,0,0,.25) !important;
+    transform: rotate(-3deg) !important; animation: none !important; overflow: visible !important;
+}
+html .PlayButton.ButtonChild .ButtonText { font-family: var(--cp-cut) !important; font-size: 26px !important; font-weight: 400 !important; letter-spacing: .04em !important; text-transform: uppercase !important; color: #fff !important; }
+html .PlayButton.ButtonChild .ButtonText::after { content: "!"; }
+html .PlayButton.ButtonChild svg, html .PlayButton.ButtonChild svg path { fill: #fff !important; }
+html .PlayButton.ButtonChild::before { content: ""; position: absolute; left: 38%; top: -10px; width: 52px; height: 18px; background: var(--cp-tape); transform: rotate(6deg); box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+html .PlayButton.ButtonChild::after { display: none !important; }
+html .PlayButton.ButtonChild:hover { animation: cp-wobble 400ms ease-in-out !important; --cp-rot: -3deg; background: color-mix(in srgb, var(--cp-red) 85%, black) !important; }
+html .PlayBar .RightControls .MenuButton { border-radius: 50% !important; background: var(--cp-paper) !important; box-shadow: 1px 2px 0 rgba(0,0,0,.25) !important; }
+html .LinksSection .LinkInner {
+    border-radius: 0 !important; background: var(--cp-paper) !important; box-shadow: 2px 2px 0 rgba(0,0,0,.2) !important; color: var(--cp-ink) !important;
+    font-family: var(--cp-hand) !important; font-size: 15px !important; font-weight: 700 !important; text-transform: none !important; letter-spacing: 0 !important;
+}
+html .LinksSection .Links > :nth-child(odd) .LinkInner, html .LinksSection .LinkInner:nth-child(odd) { transform: rotate(-1.5deg); background: var(--cp-yellow) !important; }
+html .LinksSection .LinkInner:hover { transform: rotate(1deg) scale(1.06) !important; }
+html .AppDetailsSection:not(.LinksSection) > .Panel, html .PartnerEvent.Event { border-radius: 0 !important; background: #FFFDF7 !important; box-shadow: var(--cp-shadow) !important; }
+html .PartnerEventFeaturedHeader { background: var(--cp-ink) !important; color: var(--cp-paper) !important; font-family: var(--cp-cut) !important; letter-spacing: .04em; }
+html .ProgressBar .Unlocked, html .ProgressBar [class*="Unlocked"], html .PlayBar .DetailsProgressBar { border-radius: 0 !important; background: repeating-linear-gradient(-45deg, var(--cp-red) 0 6px, color-mix(in srgb, var(--cp-red) 70%, white) 6px 12px) !important; box-shadow: none !important; }
+html .ProgressBar, html .PlayBar .DetailsProgressContainer { border-radius: 0 !important; background: var(--cp-paper-2) !important; box-shadow: inset 0 0 0 2px var(--cp-ink) !important; }
+
+/* ===== Startup: scraps fly in and stick ================================ */
+html .od-boot.cp-collage {
+    position: fixed; inset: 0; z-index: 10000; pointer-events: none;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; align-content: center; gap: 8px; padding: 0 10vw;
+    background: var(--cp-board); animation: cp-boot-out 600ms ease 2600ms forwards;
+}
+html .od-boot.cp-collage b { display: inline-block; font-weight: 400; line-height: 1; padding: 6px 12px; box-shadow: 3px 5px 0 rgba(0,0,0,.3); animation: cp-fly 600ms cubic-bezier(.2,.9,.3,1.3) backwards; transform: rotate(var(--r)); }
+html .od-boot.cp-collage i { flex-basis: 100%; height: 0; }
+html .od-boot.cp-collage em { font: 700 22px var(--cp-hand); color: #FFF8E8; margin-top: 18px; animation: mr-fade-up 600ms ease 1600ms backwards; }

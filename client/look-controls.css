@@ -1,0 +1,19 @@
+/* CUT & PASTE — controls: paper buttons, ink inputs */
+html .DialogButton { border-radius: 0 !important; background: var(--cp-paper) !important; box-shadow: 2px 3px 0 rgba(0,0,0,.25) !important; color: var(--cp-ink) !important; font-family: var(--cp-hand) !important; font-weight: 700 !important; font-size: 15px !important; text-transform: none !important; letter-spacing: 0 !important; }
+html .DialogButton:not(.Disabled):not(:disabled):hover { background: var(--cp-yellow) !important; transform: rotate(-1.5deg) !important; }
+html .DialogButton.Primary, html button.DialogButton.Primary { background: var(--cp-red) !important; color: #fff !important; }
+html :is(.DialogInput, .DialogTextInputBase), html .DialogDropDown { border-radius: 0 !important; background-color: #FFFEF8 !important; border: 2px solid var(--cp-ink) !important; color: var(--cp-ink) !important; }
+html .ToggleRail { border-radius: 0 !important; background: var(--cp-paper-2) !important; box-shadow: inset 0 0 0 2px var(--cp-ink) !important; }
+html .Toggle.On .ToggleRail, html .Toggle[class*="On"] .ToggleRail { background: var(--cp-green) !important; }
+html .ToggleSwitch { border-radius: 0 !important; background: #fff !important; box-shadow: 0 0 0 2px var(--cp-ink) !important; }
+html .GenericConfirmDialog, html .ModalPosition_Content > .DialogContent { border-radius: 0 !important; background: var(--cp-paper) !important; box-shadow: var(--cp-shadow) !important; transform: rotate(-.6deg); }
+html .GenericConfirmDialog *, html .ModalPosition_Content > .DialogContent :is(span, div, label, p) { color: var(--cp-ink) !important; }
+html .DialogHeader { font-family: var(--cp-cut) !important; text-transform: uppercase !important; font-size: 26px !important; letter-spacing: .02em !important; }
+html .PagedSettingsDialog, html .PagedSettingsDialog .PagedSettingDialog_ContentColumn { background: var(--cp-paper) !important; }
+html .PagedSettingsDialog :is(span, div, label, p) { color: var(--cp-ink) !important; }
+html .PagedSettingsDialog_PageListColumn .PagedSettingsDialog_Title { background: var(--cp-ink) !important; -webkit-text-fill-color: var(--cp-paper); color: var(--cp-paper) !important; font-family: var(--cp-cut) !important; padding: 2px 10px; transform: rotate(-2deg); display: inline-block; }
+html .PagedSettingsDialog .PagedSettingsDialog_PageListColumn { background: var(--cp-paper-2) !important; }
+html .PagedSettingsDialog_PageList .PagedSettingsDialog_PageListItem { border-radius: 0 !important; font-family: var(--cp-hand) !important; font-weight: 700; }
+html .PagedSettingsDialog_PageList .PagedSettingsDialog_PageListItem.Active { background: var(--mr-grad-soft) !important; box-shadow: none !important; }
+html .PagedSettingsDialog_PageList .PagedSettingsDialog_PageListItem.Active::before { display: none !important; }
+html .PagedSettingsDialog .SettingsDialogSubHeader { color: var(--cp-red) !important; font-family: var(--cp-hand) !important; }

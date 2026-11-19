@@ -1,0 +1,85 @@
+/* ==========================================================================
+   CUT & PASTE — layout: a collage, deliberately off-grid.
+     · Left: the game list as a lined notebook page with spiral holes, tilted
+     · Right: the page as a sheet of paper, tilted the other way, taped at the corners
+     · Store / Library / Community / You as colored index tabs poking out of the sheet's top edge
+     · Bottom-right: the dock as three sticky notes
+   ========================================================================== */
+html .OuterFrame > .TopBar { height: 60px !important; min-height: 60px !important; }
+html .Library > .Container { padding: 40px 36px 34px 30px !important; gap: 34px !important; }
+html .Library > .Container > .LibraryWindowDivider { opacity: 0; }
+
+/* Notebook page */
+html .Library > .Container > .LeftListSizableContainer {
+    --cp-rot: 0.8deg;
+    transform: rotate(0.8deg);
+    background:
+        radial-gradient(circle at 14px 50%, var(--cp-board) 0 5px, rgba(0,0,0,.25) 6px, transparent 7px) 0 0 / 28px 34px repeat-y,
+        linear-gradient(90deg, transparent 40px, color-mix(in srgb, var(--cp-red) 55%, transparent) 40px 41.5px, transparent 41.5px),
+        repeating-linear-gradient(180deg, transparent 0 25px, color-mix(in srgb, var(--cp-blue) 25%, transparent) 25px 26px),
+        #FFFEF8 !important;
+    box-shadow: var(--cp-shadow) !important;
+    padding-left: 44px !important; box-sizing: border-box;
+}
+/* The sheet */
+html .MainPanel {
+    --cp-rot: -0.5deg;
+    transform: rotate(-0.5deg);
+    background: var(--cp-paper) !important;
+    box-shadow: var(--cp-shadow) !important;
+    overflow: visible !important;
+    clip-path: none !important;
+}
+html .MainPanel > * { overflow: hidden; }
+/* Tape on two corners */
+html .MainPanel::before, html .MainPanel::after {
+    content: "" !important; position: absolute !important; width: 120px !important; height: 30px !important; inset: auto !important;
+    background: var(--cp-tape) !important; box-shadow: 0 1px 3px rgba(0,0,0,.15) !important; opacity: 1 !important; padding: 0 !important;
+    -webkit-mask: none !important; mask: none !important; mix-blend-mode: normal !important; z-index: 20; pointer-events: none;
+}
+html .MainPanel::before { left: -34px !important; top: 14px !important; transform: rotate(-38deg); }
+html .MainPanel::after { right: -34px !important; bottom: 18px !important; transform: rotate(-38deg); }
+
+/* Index tabs along the sheet's top edge */
+html .TopBar > .SuperNavBar {
+    position: fixed !important; top: 64px !important; left: auto !important; right: 80px !important; transform: none !important;
+    height: 36px !important; width: auto !important; z-index: 15;
+}
+html .SuperNavBar .SuperNav { background: transparent !important; box-shadow: none !important; height: 36px !important; padding: 0 !important; margin: 0 !important; gap: 4px !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; align-items: flex-end; }
+html .SuperNav > svg.Arrow { background: var(--cp-paper) !important; border-radius: 50% !important; box-shadow: 1px 2px 0 rgba(0,0,0,.25); }
+html .SuperNav > svg.Arrow path { stroke: var(--cp-ink) !important; }
+html .SuperNav .SuperNavMenu > .MenuButton {
+    height: 30px !important; padding: 0 18px !important; border-radius: 8px 8px 0 0 !important;
+    font-family: var(--cp-hand) !important; font-size: 15px !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important;
+    color: var(--cp-ink) !important; background: var(--tab, var(--cp-paper)) !important; box-shadow: 1px -1px 0 rgba(0,0,0,.15) !important;
+    transform: translateY(6px); transition: transform 200ms cubic-bezier(.3,1.6,.5,1) !important;
+}
+html .SuperNav .SuperNavMenu:nth-last-child(4) > .MenuButton { --tab: var(--cp-yellow); }
+html .SuperNav .SuperNavMenu:nth-last-child(3) > .MenuButton { --tab: var(--cp-pink); }
+html .SuperNav .SuperNavMenu:nth-last-child(2) > .MenuButton { --tab: #9FD8FF; }
+html .SuperNav .SuperNavMenu:nth-last-child(1) > .MenuButton { --tab: #B8E994; }
+html .SuperNav .SuperNavMenu:hover > .MenuButton { transform: translateY(2px); background: var(--tab) !important; color: var(--cp-ink) !important; }
+html.mr-js .SuperNav .SuperNavMenu.Selected > .MenuButton, html .SuperNav .SuperNavMenu.Selected > .MenuButton { transform: translateY(0); height: 36px !important; background: var(--tab) !important; color: var(--cp-ink) !important; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+html .SuperNav .mr-nav-indicator { display: none !important; }
+
+/* Sticky notes */
+html .BottomBar {
+    left: auto !important; right: 26px !important; bottom: 18px !important; margin: 0 !important; height: auto !important;
+    gap: 10px !important; padding: 0 !important; z-index: 40; align-items: flex-end;
+}
+html .BottomBar::before { display: none !important; }
+html .BottomBar .DownloadStatus::before, html .BottomBar .DownloadStatus::after { display: none !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) {
+    width: 84px !important; height: 74px !important; padding: 10px 8px !important; border-radius: 0 !important;
+    flex-direction: column !important; align-items: flex-start !important; justify-content: space-between !important;
+    background: var(--note) !important; color: var(--cp-ink) !important; box-shadow: 2px 4px 8px rgba(0,0,0,.3) !important;
+    transform: rotate(var(--r)); transition: transform 250ms cubic-bezier(.3,1.6,.5,1) !important;
+}
+html .BottomBar .AddGameButton { --note: var(--cp-yellow); --r: -4deg; }
+html .BottomBar .DownloadStatus { --note: var(--cp-pink); --r: 3deg; }
+html .BottomBar .FriendsButton { --note: #9FD8FF; --r: -2deg; flex-direction: column-reverse !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton):hover { transform: rotate(0) translateY(-6px) scale(1.06); }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) .Icon svg, html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) .Icon svg path { fill: var(--cp-ink) !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) :is(.Text, .Queue) {
+    max-width: 80px !important; opacity: 1 !important; white-space: normal !important; font: 700 12px/1.1 var(--cp-hand) !important; color: var(--cp-ink) !important;
+}

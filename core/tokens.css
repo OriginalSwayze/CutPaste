@@ -1,0 +1,48 @@
+/* CUT & PASTE — tokens. Paper, ink, tape, highlighter, cork. */
+:root {
+    --cp-paper: var(--cp-p-paper, #F6F1E4);
+    --cp-paper-2: var(--cp-p-paper-2, #EDE4CF);
+    --cp-ink: var(--cp-p-ink, #1E1B18);
+    --cp-ink-2: color-mix(in srgb, var(--cp-ink) 70%, var(--cp-paper));
+    --cp-ink-3: color-mix(in srgb, var(--cp-ink) 45%, var(--cp-paper));
+    --cp-board: var(--cp-p-board, #8A6A47);
+    --cp-red: var(--cp-p-red, #E6372E);
+    --cp-yellow: var(--cp-p-yellow, #FFE14D);
+    --cp-blue: var(--cp-p-blue, #2F6FDB);
+    --cp-pink: var(--cp-p-pink, #FF8FB1);
+    --cp-green: var(--cp-p-green, #3FAE6A);
+    --cp-tape: color-mix(in srgb, #F3E9C6 78%, transparent);
+    --cp-hand: "Ink Free", "Segoe Print", cursive;
+    --cp-type: "Courier New", Consolas, monospace;
+    --cp-cut: Impact, "Arial Black", sans-serif;
+    --cp-shadow: 2px 3px 0 rgba(0,0,0,.18), 6px 14px 24px -8px rgba(0,0,0,.45);
+    --cp-torn: polygon(0 3px, 4% 0, 9% 4px, 14% 1px, 20% 5px, 26% 0, 33% 3px, 40% 1px, 47% 5px, 54% 0, 61% 4px, 68% 1px, 75% 5px, 82% 0, 89% 4px, 95% 1px, 100% 3px, 100% 100%, 0 100%);
+    --cp-torn-b: polygon(0 0, 100% 0, 100% calc(100% - 4px), 94% 100%, 87% calc(100% - 3px), 80% 100%, 72% calc(100% - 5px), 64% 100%, 57% calc(100% - 2px), 49% 100%, 41% calc(100% - 4px), 33% 100%, 25% calc(100% - 3px), 17% 100%, 9% calc(100% - 5px), 0 100%);
+
+    --t-accent: var(--cp-red);
+    --t-accent-2: var(--cp-blue);
+    --t-alert: var(--cp-red);
+    --t-bg: var(--cp-board);
+    --t-panel: var(--cp-paper);
+    --t-ink: #FFFFFF;
+    --t-fg: var(--cp-ink);
+    --t-fg-2: var(--cp-ink-2);
+    --t-fg-3: var(--cp-ink-3);
+    --t-fg-4: color-mix(in srgb, var(--cp-ink) 30%, var(--cp-paper));
+    --t-line: color-mix(in srgb, var(--cp-ink) 18%, transparent);
+    --mr-r: 2px; --mr-r-lg: 2px; --mr-r-md: 2px; --mr-r-sm: 2px; --mr-r-pill: 2px;
+    --mr-glass: var(--cp-paper);
+    --mr-glass-strong: var(--cp-paper);
+    --mr-glass-solid: var(--cp-paper);
+    --mr-glass-filter: none;
+    --mr-glass-edge: none;
+    --mr-hover: color-mix(in srgb, var(--cp-yellow) 45%, transparent);
+    --mr-press: color-mix(in srgb, var(--cp-yellow) 70%, transparent);
+    --mr-font: var(--cp-type);
+    --mr-font-display: var(--cp-cut);
+    --mr-font-mono: var(--cp-type);
+    --mr-grad: linear-gradient(var(--cp-red), var(--cp-red));
+    --mr-grad-soft: linear-gradient(100deg, transparent 2%, color-mix(in srgb, var(--cp-yellow) 85%, transparent) 4% 94%, transparent 97%);
+    --mr-on-accent: #FFFFFF;
+    --mr-spot: none;
+}

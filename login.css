@@ -1,0 +1,23 @@
+/* Cut & Paste — the "Sign in to Steam" window. */
+@import url("./core/alias.css");
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+@import url("./core/backdrop.css");
+html .Login, html .Login.AnimatedBackground, html .LoginAnimatedBackground,
+html .Login .LoginStatusContainer, html .Login .SpinnerLoaderContainer { background: transparent !important; }
+html .Login.AnimatedBackground::before, html .LoginAnimatedBackground::after, html .Login video { display: none !important; }
+html .Login .SpinnerLoaderContainer { position: relative; }
+html .Login .SpinnerLoaderContainer > img { opacity: 0 !important; }
+/* CUT & PASTE sign-in: a pair of scissors snipping (two blades opening and closing) */
+html .Login .SpinnerLoaderContainer::before, html .Login .SpinnerLoaderContainer::after {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 70px; height: 10px; margin: -5px 0 0 -6px; border-radius: 0 50% 50% 0;
+    background: var(--cp-paper); box-shadow: 0 0 0 2px #1E1B18; transform-origin: 6px 50%;
+}
+html .Login .SpinnerLoaderContainer::before { animation: cp-snip-a .6s ease-in-out infinite alternate; }
+html .Login .SpinnerLoaderContainer::after { animation: cp-snip-b .6s ease-in-out infinite alternate; }
+@keyframes cp-snip-a { from { transform: rotate(-24deg); } to { transform: rotate(-4deg); } }
+@keyframes cp-snip-b { from { transform: rotate(24deg); } to { transform: rotate(4deg); } }
+html .Login .LoadingStatus, html .Login .LoadingStatus > .LoginStatus { font-family: var(--cp-hand) !important; font-weight: 700; color: #FFF8E8 !important; }
+html .Login .ProgressBar { border-radius: 0 !important; background: var(--cp-red) !important; }
+html .Login .Avatar img { border-radius: 0 !important; box-shadow: 0 0 0 5px #fff, 3px 6px 10px rgba(0,0,0,.35) !important; transform: rotate(-3deg); }
+html .Login .UserContainer > .PersonaName { font-family: var(--cp-cut) !important; text-transform: uppercase; color: #FFF8E8 !important; }
