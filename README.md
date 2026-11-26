@@ -1,6 +1,6 @@
 # Cut & Paste
 
-**Your library as a zine collage, pinned to a cork board.** A [Millennium](https://steambrew.app) theme for the Steam client.
+**Your library as a zine collage, pinned to a cork board.** A Steam client theme for [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) and [Millennium](https://steambrew.app).
 
 ![Cut & Paste: library](media/library.gif)
 
@@ -19,13 +19,14 @@
 
 ## Install
 
-1. Install [Millennium](https://steambrew.app).
-2. Find **Cut & Paste** in the Millennium theme browser, or download this repository into `Steam/millennium/themes/CutPaste`.
-3. Open **Steam → Millennium → Themes** and pick **Cut & Paste**.
+- **With [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) (easiest):** in Steam press **Ctrl+Shift+B**, open
+  **Get more** and install **Cut & Paste**.
+- **By hand:** download **CutPaste.zip** from the [latest release](https://github.com/OriginalSwayze/CutPaste/releases/latest) and unzip
+  it into `%APPDATA%\Beyond Steam\themes\CutPaste` (Beyond Steam) or `Steam\millennium\themes\CutPaste` (Millennium).
 
 ## Options
 
-Open **Millennium → Themes → Cut & Paste** to change:
+In Beyond Steam's **Theme options** tab (or **Millennium → Themes → Cut & Paste**) you can change:
 
 Paper (Cork, Newsprint, Risograph, Kraft) · Tilt (Crooked / Straight) · Halftone covers · Pins · Density · What's New · Readout · Startup screen · Motion · Cover hover · Privacy
 
